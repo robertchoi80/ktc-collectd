@@ -6,10 +6,11 @@ long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version           "0.9.0"
 
 recipe            "default", ""
-recipe            "default", "Install and configure collectd-client"
+recipe            "client_collectd", "Install and configure collectd-client"
+recipe            "client_graphite", "configure graphite plugin"
 
-supports          "ubuntu", ">= 8.04"
-supports          "debian", ">= 5.0"
+supports          "ubuntu" 
+supports          "debian"
 supports          "fedora"
 supports          "centos"
 supports          "redhat"

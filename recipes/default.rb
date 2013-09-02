@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: ktc-collectd
-# Recipe:: client_graphite
+# Recipe:: default
 #
 # Copyright 2013, Robert Choi.
 #
@@ -16,13 +16,3 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-chef_gem "chef-rewind"
-require 'chef/rewind'
-
-include_recipe "collectd::client_graphite"
-
-rewind :collectd_plugin => 'carbon_writer' do
-    template "python_conf_new.erb"
-    cookbook_name "ktc-collectd"
-end
