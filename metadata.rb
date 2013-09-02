@@ -1,3 +1,4 @@
+name              "ktc-collectd"
 maintainer        "Robert Choi"
 maintainer_email  "taeilchoi1@gmail.com"
 license           "Apache 2.0"
@@ -9,7 +10,7 @@ recipe            "default", ""
 recipe            "client_collectd", "Install and configure collectd-client"
 recipe            "client_graphite", "configure graphite plugin"
 
-supports          "ubuntu" 
+supports          "ubuntu"
 supports          "debian"
 supports          "fedora"
 supports          "centos"
