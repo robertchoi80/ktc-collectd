@@ -5,6 +5,8 @@ site :opscode
 
 metadata
 
+cookbook 'collectd', github: 'miah/chef-collectd'
+
 # solo-search for intgration tests
 group :integration do
   cookbook 'chef-solo-search', github: 'edelight/chef-solo-search'
