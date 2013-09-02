@@ -1,4 +1,4 @@
-ktc-collectd
-============
+Description
+=======
 
-create wrapper for collectd
+This is a wrapper for collectd cookbook.
