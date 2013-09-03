@@ -6,6 +6,7 @@ site :opscode
 metadata
 
 cookbook 'collectd', github: 'miah/chef-collectd'
+cookbook "graphite", github: "hw-cookbooks/graphite"
 
 # solo-search for intgration tests
 group :integration do

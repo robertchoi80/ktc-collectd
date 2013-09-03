@@ -16,3 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+include_attribute "collectd"
+
+default['collectd']['version'] = "4.10.1"
