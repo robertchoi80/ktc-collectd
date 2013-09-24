@@ -9,6 +9,7 @@ version           "0.9.0"
 recipe            "default", ""
 recipe            "client_collectd", "Install and configure collectd-client"
 recipe            "client_graphite", "configure graphite plugin"
+recipe            "client_splunk", "configure metrics to splunk"
 
 supports          "ubuntu"
 supports          "debian"
