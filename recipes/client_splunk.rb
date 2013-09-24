@@ -35,8 +35,10 @@ cookbook_file 'splunk_rb' do
   mode   0755
 end
 
-cron 'splunk_cron' do
-  minute "*/2"
-  command "#{ node['collectd']['plugin_dir'] }/splunk.rb #{ node['collectd']['splunk_ip'] } #{ node['collectd']['splunk_port'] } >/dev/null 2>&1"
-  action :create
+if node.has_key?('monitoring') and node['monitoring'].has_key?('splunk')
+  cron 'splunk_cron' do
+    minute "*/2"
+    command "#{ node['collectd']['plugin_dir'] }/splunk.rb #{ node['monitoring']['splunk']['ip'] } #{ node['monitoring']['splunk']['port'] } >/dev/null 2>&1"
+    action :create
+  end
 end
