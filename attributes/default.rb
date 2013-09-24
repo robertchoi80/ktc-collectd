@@ -20,3 +20,4 @@
 include_attribute "collectd"
 
 default['collectd']['version'] = "4.10.1"
+default['collectd']['server_recipe'] = "collectd\\:\\:server"
