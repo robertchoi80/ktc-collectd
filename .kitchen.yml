@@ -15,7 +15,7 @@ platforms:
 suites:
 - name: default
   run_list:
-    - recipe[ktc-collectd]
+    - recipe[ktc-collectd::client_collectd]
   attributes: {}
 
 clusters:
