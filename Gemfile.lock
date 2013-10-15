@@ -1,4 +1,20 @@
 GIT
+  remote: git://github.com/chrisroberts/vagabond.git
+  revision: a599a2adc783361000a79859d5a1da4d6e54acf5
+  branch: develop
+  specs:
+    vagabond (0.2.9)
+      attribute_struct
+      chef
+      elecksee (>= 1.0.10)
+      knife-bootstrapsync
+      librarian-chef
+      serverspec (>= 0.6.3)
+      test-kitchen (>= 1.0.0.alpha)
+      thor
+      uuidtools
+
+GIT
   remote: git://github.com/opscode/kitchen-vagrant
   revision: 93a8ac4a06f315190614f59a9911a8fc446d7f03
   specs:
@@ -7,7 +23,7 @@ GIT
 
 GIT
   remote: git://github.com/opscode/test-kitchen.git
-  revision: dcece4118da0b86bed1d7243a42e84a7a2b53776
+  revision: a865ebe6ced2ba7b518b005fed51dc78bb2d1df1
   specs:
     test-kitchen (1.0.0.dev)
       celluloid
@@ -28,11 +44,13 @@ GEM
     akami (1.2.0)
       gyoku (>= 0.4.0)
       nokogiri (>= 1.4.0)
-    berkshelf (2.0.9)
+    archive-tar-minitar (0.5.2)
+    attribute_struct (0.1.6)
+      hashie (>= 2.0.0)
+    berkshelf (2.0.10)
       activesupport (~> 3.2.0)
       addressable (~> 2.3.4)
       buff-shell_out (~> 0.1)
-      celluloid (>= 0.14.0)
       chozo (>= 0.6.1)
       faraday (>= 0.8.5)
       hashie (>= 2.0.2)
@@ -92,6 +110,9 @@ GEM
       builder (>= 2.1.2)
     coderay (1.0.9)
     diff-lcs (1.2.4)
+    elecksee (1.0.10)
+      mixlib-shellout
+      net-ssh
     erubis (2.7.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
@@ -136,13 +157,20 @@ GEM
     i18n (0.6.5)
     ipaddress (0.8.0)
     json (1.7.7)
-    kitchen-lxc (0.0.1.beta2)
-      lxc-awesome-ephemeral (>= 0.0.1.beta1)
-      test-kitchen (>= 1.0.0.alpha.6)
+    knife-bootstrapsync (1.0.2)
+      chef
+      net-sftp
     knife-cookbook-doc (0.3.0)
       chef
       erubis
-    listen (1.3.0)
+    librarian (0.1.1)
+      highline
+      thor (~> 0.15)
+    librarian-chef (0.0.1)
+      archive-tar-minitar (>= 0.5.2)
+      chef (>= 0.10)
+      librarian (~> 0.1.0)
+    listen (1.3.1)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
@@ -151,7 +179,6 @@ GEM
     logging (1.6.2)
       little-plugger (>= 1.1.3)
     lumberjack (1.0.4)
-    lxc-awesome-ephemeral (0.0.1.beta1)
     method_source (0.8.2)
     mime-types (1.25)
     minitar (0.5.4)
@@ -166,11 +193,13 @@ GEM
     mixlib-config (1.1.2)
     mixlib-log (1.6.0)
     mixlib-shellout (1.2.0)
-    multi_json (1.7.9)
+    multi_json (1.8.0)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
     net-http-persistent (2.9)
     net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.6.8)
     net-ssh-gateway (1.2.0)
@@ -189,7 +218,7 @@ GEM
       mixlib-shellout
       systemu
       yajl-ruby
-    parallel (0.8.0)
+    parallel (0.8.1)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -206,7 +235,7 @@ GEM
     rest-client (1.6.7)
       mime-types (>= 1.16)
     retryable (1.3.3)
-    ridley (1.5.2)
+    ridley (1.5.3)
       addressable
       buff-config (~> 0.2)
       buff-extensions (~> 0.3)
@@ -244,6 +273,10 @@ GEM
       nokogiri (>= 1.4.0)
       nori (~> 1.0)
       wasabi (~> 1.0)
+    serverspec (0.7.13)
+      highline
+      net-ssh
+      rspec (>= 2.13.0)
     slop (3.4.6)
     solve (0.8.1)
     systemu (2.5.2)
@@ -289,8 +322,8 @@ DEPENDENCIES
   guard
   guard-kitchen
   guard-rake
-  kitchen-lxc
   kitchen-vagrant!
   knife-cookbook-doc
   tailor
   test-kitchen!
+  vagabond!

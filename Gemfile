@@ -4,9 +4,10 @@ source  'https://rubygems.org'
 gem 'berkshelf'
 
 group "develop" do
-  gem 'test-kitchen', :git => "git://github.com/opscode/test-kitchen.git"
-  gem 'kitchen-vagrant', :git => "git://github.com/opscode/kitchen-vagrant"
-  gem 'kitchen-lxc'
+  gem 'test-kitchen',
+    :git => "git://github.com/opscode/test-kitchen.git"
+  gem 'kitchen-vagrant',
+    :git => "git://github.com/opscode/kitchen-vagrant"
   gem 'busser-bats'
   gem 'busser-serverspec'
   gem 'foodcritic'
@@ -17,4 +18,7 @@ group "develop" do
   gem 'guard-kitchen'
   gem 'knife-cookbook-doc'
   gem 'chefspec'
+  gem 'vagabond',
+    :git => "git://github.com/chrisroberts/vagabond.git",
+    :branch => "develop"
 end
