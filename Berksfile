@@ -8,9 +8,9 @@ site :opscode
 
 metadata
 
-cookbook 'collectd', github: 'miah/chef-collectd'
-cookbook "graphite", github: "hw-cookbooks/graphite"
+cookbook "collectd"
+cookbook "graphite"
 
 cookbook "ktc-testing"
-cookbook "ktc-utils", github: "cloudware-cookbooks/ktc-utils"
+cookbook "ktc-utils"
 cookbook "collectd_test", path: "test/cookbooks/collectd_test"

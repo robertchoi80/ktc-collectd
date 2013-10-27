@@ -18,8 +18,6 @@
 #
 
 define :collectd_processes, :type => 'plugin'  do
-  #include_recipe "ktc-utils"
-
   processes_collectd = KTC::Helpers.select_and_strip_keys params[:input], params[:key]
   
   collectd_plugin "processes" do

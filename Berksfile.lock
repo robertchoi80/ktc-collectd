@@ -4,22 +4,16 @@
       "path": "."
     },
     "collectd": {
-      "locked_version": "1.0.8",
-      "git": "git://github.com/miah/chef-collectd.git",
-      "ref": "170125a9512a0d6f64a78cf716ab1294c5db6285"
+      "locked_version": "1.0.8"
     },
     "graphite": {
-      "locked_version": "0.4.3",
-      "git": "git://github.com/hw-cookbooks/graphite.git",
-      "ref": "eadf8812a6e460c123c5c0b31d5d33f713e680b3"
+      "locked_version": "0.4.3"
     },
     "ktc-testing": {
       "locked_version": "0.0.4"
     },
     "ktc-utils": {
-      "locked_version": "0.3.4",
-      "git": "git://github.com/cloudware-cookbooks/ktc-utils.git",
-      "ref": "461627f12c0351d79a375d098c9770aa235ffe55"
+      "locked_version": "0.3.5"
     },
     "collectd_test": {
       "path": "./test/cookbooks/collectd_test"
