@@ -12,4 +12,5 @@ cookbook 'collectd', github: 'miah/chef-collectd'
 cookbook "graphite", github: "hw-cookbooks/graphite"
 
 cookbook "ktc-testing"
-#cookbook 'chef-solo-search', github: 'edelight/chef-solo-search'
+cookbook "ktc-utils", github: "cloudware-cookbooks/ktc-utils"
+cookbook "collectd_test", path: "test/cookbooks/collectd_test"

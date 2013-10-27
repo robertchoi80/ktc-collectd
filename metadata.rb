@@ -18,3 +18,4 @@ supports          "centos"
 supports          "redhat"
 
 depends           "collectd"
+depends           "ktc-utils"
