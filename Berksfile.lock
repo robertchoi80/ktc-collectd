@@ -3,20 +3,17 @@
     "ktc-collectd": {
       "path": "."
     },
-    "collectd": {
-      "locked_version": "1.0.8"
-    },
     "graphite": {
       "locked_version": "0.4.3"
     },
     "ktc-testing": {
       "locked_version": "0.0.4"
     },
-    "ktc-utils": {
-      "locked_version": "0.3.5"
-    },
     "collectd_test": {
       "path": "./test/cookbooks/collectd_test"
+    },
+    "collectd": {
+      "locked_version": "1.0.8"
     },
     "apt": {
       "locked_version": "2.2.1"
@@ -36,17 +33,8 @@
     "yum": {
       "locked_version": "2.3.4"
     },
-    "python": {
-      "locked_version": "1.4.0"
-    },
-    "apache2": {
-      "locked_version": "1.7.0"
-    },
-    "memcached": {
-      "locked_version": "1.6.0"
-    },
-    "ubuntu": {
-      "locked_version": "1.1.2"
+    "ktc-utils": {
+      "locked_version": "0.3.5"
     },
     "services": {
       "locked_version": "1.1.1"
@@ -77,6 +65,18 @@
     },
     "xfs": {
       "locked_version": "1.1.0"
+    },
+    "python": {
+      "locked_version": "1.4.0"
+    },
+    "apache2": {
+      "locked_version": "1.7.0"
+    },
+    "memcached": {
+      "locked_version": "1.6.0"
+    },
+    "ubuntu": {
+      "locked_version": "1.1.2"
     }
   }
 }

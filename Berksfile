@@ -8,9 +8,6 @@ site :opscode
 
 metadata
 
-cookbook "collectd"
 cookbook "graphite"
-
 cookbook "ktc-testing"
-cookbook "ktc-utils"
 cookbook "collectd_test", path: "test/cookbooks/collectd_test"
