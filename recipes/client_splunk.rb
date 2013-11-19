@@ -21,7 +21,7 @@ include_recipe 'collectd::client'
 
 collectd_plugin "unixsock" do
   options ({ :SocketFile => "/var/lib/collectd/collectd.sock",
-    :SocketGroup => "collectd",
+    :SocketGroup => "root",
     :SocketPerms => "0770"
   })
   type 'plugin'

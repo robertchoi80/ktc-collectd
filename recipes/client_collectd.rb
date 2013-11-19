@@ -31,7 +31,4 @@ collectd_plugin "load"
 collectd_plugin "df"
 collectd_plugin "disk"
 collectd_plugin "interface"
-collectd_plugin "ping" do
-  options host: node[:ktc_collectd][:ping][:hosts]
-end
 collectd_plugin "uptime"
