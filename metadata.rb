@@ -4,7 +4,7 @@ maintainer_email  "taeilchoi1@gmail.com"
 license           "Apache 2.0"
 description       "KTC wrapper for collectd cookbook"
 long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.9.3'
+version '0.9.4'
 
 recipe            "default", ""
 recipe            "client_collectd", "Install and configure collectd-client"
