@@ -185,7 +185,7 @@ if __FILE__ == $0
       @logstr = "chost=#{host} ccheck=#{type}"
       
       # redmine ticket #3422
-      if type =~ /^cpufreq|^disk|^interface|^irq|^processes|^vmem|^mysql/
+      if type =~ /^cpufreq|^disk|^interface|^irq|^vmem|^mysql/
         next
       end
 
