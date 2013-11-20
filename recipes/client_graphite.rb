@@ -20,6 +20,13 @@
 chef_gem "chef-rewind"
 require 'chef/rewind'
 
+include_recipe "services"
+
+endpoint = Services::Endpoint.new "graphite"
+endpoint.load
+
+node.override['graphite']['server_address'] = endpoint.ip
+
 include_recipe "collectd::client_graphite"
 
 rewind :collectd_plugin => 'carbon_writer' do
