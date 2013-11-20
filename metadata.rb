@@ -19,3 +19,4 @@ supports          "redhat"
 
 depends           "collectd"
 depends           "ktc-utils"
+depends           "services"
