@@ -1,8 +1,5 @@
-#
 # Cookbook Name:: ktc-collectd
-# Definition:: collectd_processes
-#
-# Copyright 2013, Robert Choi
+# Provider:: processes
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,11 +14,5 @@
 # limitations under the License.
 #
 
-define :collectd_processes, :type => 'plugin'  do
-  processes_collectd = KTC::Helpers.select_and_strip_keys params[:input], params[:key]
-  
-  collectd_plugin "processes" do
-    options :process => processes_collectd
-    type params[:type]
-  end
+action :create do
 end
