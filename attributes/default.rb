@@ -22,3 +22,4 @@ include_attribute "collectd"
 default['collectd']['version'] = "4.10.1"
 default['collectd']['server_recipe'] = "ktc-monitor\\:\\:server_collectd"
 default['collectd']['interval'] = 60
+default['collectd']['read_threads'] = 10
