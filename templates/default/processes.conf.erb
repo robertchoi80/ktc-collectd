@@ -2,9 +2,10 @@
 
 LoadPlugin processes
 
+<% unless @all_processes.empty? %>
 <Plugin processes>
 <% @all_processes.each do |process| %>
   Process "<%= process %>"
 <% end %>
 </Plugin>
-
+<% end %>
