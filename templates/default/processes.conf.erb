@@ -1,6 +1,8 @@
 # Changes will be overwritten, do not edit!
 
-LoadPlugin processes
+<LoadPlugin processes>
+  Interval <%= node['collectd']['processes_interval'] %>
+</LoadPlugin>
 
 <% unless @all_processes.empty? %>
 <Plugin processes>
