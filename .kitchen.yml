@@ -12,7 +12,13 @@ platforms:
 - name: ubuntu-12.04
 
 suites:
-- name: default
+- name: server
+  run_list:
+    - recipe[ktc-testing]
+    - recipe[collectd::server]
+    - recipe[ktc-collectd::client_graphite]
+
+- name: client
   run_list:
     - recipe[ktc-testing]
     - recipe[collectd_test]
