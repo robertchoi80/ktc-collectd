@@ -29,7 +29,9 @@ node.override['graphite']['server_address'] = endpoint.ip
 
 include_recipe "collectd::client_graphite"
 
-rewind :collectd_plugin => 'carbon_writer' do
-    template "python_conf_new.erb"
-    cookbook_name "ktc-collectd"
+unless node['collectd']['version'] =~ /5\.\d+/
+  rewind :collectd_plugin => 'carbon_writer' do
+      template "python_conf_new.erb"
+      cookbook_name "ktc-collectd"
+  end
 end
