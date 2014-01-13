@@ -3,7 +3,20 @@
 # Recipe:: client_collectd
 #
 
+chef_gem "chef-rewind"
+require 'chef/rewind'
+
+package "collectd-core" do
+  version node['collectd']['version']
+  options node['collectd']['install_options']
+end
+
 include_recipe 'collectd::client'
+
+rewind :package => "collectd" do
+  version node['collectd']['version']
+  options node['collectd']['install_options']
+end
 
 servers = []
 
