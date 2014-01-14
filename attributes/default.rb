@@ -26,3 +26,4 @@ default['collectd']['server_recipe'] = "ktc-monitor\\:\\:server_collectd"
 default['collectd']['interval'] = 60
 default['collectd']['processes_interval'] = 20
 default['collectd']['read_threads'] = 10
+default['collectd']['graphite_prefix'] = ""
