@@ -17,21 +17,36 @@
 # limitations under the License.
 #
 
-chef_gem "chef-rewind"
+chef_gem 'chef-rewind'
 require 'chef/rewind'
 
-include_recipe "services"
+include_recipe 'services'
 
-endpoint = Services::Endpoint.new "graphite"
+endpoint = Services::Endpoint.new 'graphite'
 endpoint.load
 
-node.override['graphite']['server_address'] = endpoint.ip
+if endpoint.ip.empty? || endpoint.ip.nil?
+  server = node['graphite']['server_address']
+else
+  server = endpoint.ip
+end
 
-include_recipe "collectd::client_graphite"
+include_recipe 'collectd::client_graphite'
 
-unless node['collectd']['version'] =~ /5\.\d+/
-  rewind :collectd_plugin => 'carbon_writer' do
-      template "python_conf_new.erb"
-      cookbook_name "ktc-collectd"
+# Rewind the plugin to enable store_rates option
+if node['collectd']['version'] =~ /5\.\d+/
+  rewind collectd_plugin: 'write_graphite' do
+    options(
+      host: server,
+      port: 2003,
+      prefix: node['collectd']['graphite_prefix'],
+      escape_character: '_',
+      store_rates: true
+    )
+  end
+else
+  rewind collectd_plugin: 'carbon_writer' do
+    template 'python_conf_new.erb'
+    cookbook_name 'ktc-collectd'
   end
 end
