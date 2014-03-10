@@ -17,13 +17,14 @@
 # limitations under the License.
 #
 
-include_attribute "collectd"
+include_attribute 'collectd'
 
-default['collectd']['version'] = "5.2.0-2ubuntu2"
-default['collectd']['install_type'] = "package"
-default['collectd']['install_options'] = '--force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew"'
-default['collectd']['server_recipe'] = "ktc-monitor\\:\\:server_collectd"
+default['collectd']['version'] = '5.2.0-2ubuntu2'
+default['collectd']['install_type'] = 'package'
+default['collectd']['install_options'] =
+  '--force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew"'
+default['collectd']['server_recipe'] = 'ktc-monitor\\:\\:server_collectd'
 default['collectd']['interval'] = 60
 default['collectd']['processes_interval'] = 20
 default['collectd']['read_threads'] = 10
-default['collectd']['graphite_prefix'] = ""
+default['collectd']['graphite_prefix'] = ''

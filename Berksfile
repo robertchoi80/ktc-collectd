@@ -12,5 +12,6 @@ cookbook "accumulator"
 
 group "integration" do
   cookbook "ktc-testing"
+  cookbook "ktc-graphite"
   cookbook "collectd_test", path: "test/cookbooks/collectd_test"
 end

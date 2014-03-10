@@ -19,11 +19,12 @@
 
 include_recipe 'collectd::client'
 
-collectd_plugin "unixsock" do
-  options ({ :SocketFile => "/var/lib/collectd/collectd.sock",
-    :SocketGroup => "root",
-    :SocketPerms => "0770"
-  })
+collectd_plugin 'unixsock' do
+  options(
+    SocketFile: '/var/lib/collectd/collectd.sock',
+    SocketGroup: 'root',
+    SocketPerms: '0770'
+  )
   type 'plugin'
 end
 
@@ -35,10 +36,14 @@ cookbook_file 'splunk_rb' do
   mode   0755
 end
 
-if node.has_key?('monitor') and node['monitor'].has_key?('splunk')
+if node.key?('monitor') && node['monitor'].key?('splunk')
+  cmd = "#{node['collectd']['plugin_dir']}/splunk.rb "
+  cmd << "#{node['monitor']['splunk']['ip']} "
+  cmd << "#{node['monitor']['splunk']['port']} >/dev/null 2>&1"
+
   cron 'splunk_cron' do
-    minute "*/2"
-    command "#{ node['collectd']['plugin_dir'] }/splunk.rb #{ node['monitor']['splunk']['ip'] } #{ node['monitor']['splunk']['port'] } >/dev/null 2>&1"
+    minute '*/2'
+    command cmd
     action :create
   end
 end

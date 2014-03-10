@@ -21,5 +21,5 @@ end
 
 actions :create
 
-attribute :name, :kind_of => String, :name_attribute => true
-attribute :input, :kind_of => Array
+attribute :name, kind_of: String, name_attribute: true
+attribute :input, kind_of: Array
