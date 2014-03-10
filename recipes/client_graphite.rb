@@ -25,13 +25,19 @@ include_recipe 'services'
 endpoint = Services::Endpoint.new 'graphite'
 endpoint.load
 
+if endpoint.ip.empty? || endpoint.ip.nil?
+  server = node['graphite']['server_address']
+else
+  server = endpoint.ip
+end
+
 include_recipe 'collectd::client_graphite'
 
 # Rewind the plugin to enable store_rates option
 if node['collectd']['version'] =~ /5\.\d+/
   rewind collectd_plugin: 'write_graphite' do
     options(
-      host: endpoint.ip,
+      host: server,
       port: 2003,
       prefix: node['collectd']['graphite_prefix'],
       escape_character: '_',

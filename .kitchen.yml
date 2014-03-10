@@ -21,6 +21,8 @@ suites:
     - recipe[ktc-collectd::client_graphite]
   attributes:
     ha_disabled: true
+    graphite:
+      server_address: 127.0.0.1
     etcd:
       addr: 127.0.0.1
       peer_addr: 127.0.0.1
